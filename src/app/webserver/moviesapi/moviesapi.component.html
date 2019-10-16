@@ -1,0 +1,27 @@
+<form action="">
+    <div class="form-group" class="col-md-4 offset-md-4 card-body">
+    <input type="text" name="text" style="width: 500px; height:40px; margin-top: -30px;" id="text" placeholder="search by movie name.." class="from-control" (keyup)="showMovies($event)" required="search">
+    </div>
+</form>
+
+<!-- <div _ngcontent-arj-c3 class="col-md-3 float-left">
+    
+    <div _ngcontent-arj-c3="" class="class col-md-12 card card-body" *ngFor="let mov of movies">
+
+<h3  _ngcontent-arj-c3 class="col-md-12 float-left">{{mov.Title}}</h3>
+        <img _ngcontent-arj-c3="" src="{{mov.Poster}}" alt="" class="class card-img-top col-md-12 float-left">
+
+
+    </div> -->
+
+    <div class="row">
+
+        <div class="col-mod-4 card card-body" *ngFor="let movie of movies">
+<h4>{{movie.Title}}</h4>
+<a href="{{movie.Website}}"><img src="{{movie.Poster}}" alt=""></a>
+
+        </div>
+    </div>
+
+
+
