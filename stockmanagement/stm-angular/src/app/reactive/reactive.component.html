@@ -1,0 +1,45 @@
+<div class="col-md-4 offset-4 mt-4 mb-4 card card-body">
+    <form action="" [formGroup]="form" (ngSubmit)="loginData(form)">
+        <h1 class="text-center bg-primary text-white">Add Movie</h1>
+        <div class="form-group">
+            <input type="text" name="title" id="title" class="form-control" placeholder="Movie Title.." formControlName="title">
+        <div *ngIf="title.touched && title.invalid">
+            <p *ngIf="title.errors.required" class="text-danger">
+            *field required
+            </p>
+            <p *ngIf="title.errors.unique" class="text-danger">*title already Exist</p>
+        </div>
+        </div>
+        <div class="form-group">
+            <input type="text" name="url" id="url" class="form-control" placeholder="movie image url.." formControlName="url">
+            <div *ngIf="url.touched && url.invalid">
+                    <p *ngIf="url.errors.required" class="text-danger">
+                    *field required
+                    </p>
+                </div>
+                
+        </div>
+        <div class="form-group">
+            <textarea type="text" name="des" id="des" cols="30" rows="10" class="form-control" placeholder="more description.." formControlName="des"></textarea>
+            <div *ngIf="des.touched && des.invalid">
+                    <p *ngIf="des.errors.required" class="text-danger">
+                    *field required
+                    </p>
+                </div>
+                
+        </div>
+        <!-- <div class="form-group">
+            <textarea name="area" id="area" cols="20" rows="10" class="from-control" fromControlName='area'></textarea>
+            <div *ngIf="area.touched && area.invalid">
+                    <p *ngIf="area.errors.required" class="text-danger">
+                    *field required
+                    </p>
+                </div>
+
+
+        </div> -->
+        <div class="form-group">
+            <button type="submit" class="btn btn-outline-primary float-right" [disabled]="form.invalid">Add</button>
+        </div>
+    </form>
+</div>

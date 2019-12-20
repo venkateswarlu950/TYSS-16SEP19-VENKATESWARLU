@@ -1,0 +1,37 @@
+<form action="" #form="ngForm"  class="col-md-4 offset-4 mt-5 card card-body"  (ngSubmit)="getDetails(form)">
+    <h1 class="text-center bg-dark text-white">ProductData</h1>
+
+    <div class="form-group card card-body col-md-4 offset-4 mt-3">
+        <input type="search" name="comp" #comp="ngModel" ngModel id="search" class="form-control" 
+        placeholder="Search by name" >
+      </div>
+
+    <div class="form-group">
+            <button type="submit" class="btn-outline-success float-right" [disabled]="form.invalid">GetStockData</button>
+        </div>
+</form >
+
+<table class="table table-border table-striped table-dark col-md-8 offset-2">
+    <thead>
+        <tr>
+            <th>product Id</th>
+            <th>product Name</th>
+            <th>Catagory Name</th>
+            <th>product by company</th>
+            <th>Quantity </th>
+            <th>Price</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor='let product of products'>
+            <td>{{product.id}}</td>
+            <td>{{product.name}}</td>
+            <td>{{product.catg}}</td>
+            <td>{{product.company}}</td>
+            <td>{{product.quantity}}</td>
+            <td>{{product.price}}</td>
+           
+        </tr>
+    </tbody>
+</table>
