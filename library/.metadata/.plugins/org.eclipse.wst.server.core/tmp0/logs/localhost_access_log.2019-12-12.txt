@@ -1,0 +1,6 @@
+127.0.0.1 - - [12/Dec/2019:15:56:18 +0530] "GET / HTTP/1.1" 404 1074
+0:0:0:0:0:0:0:1 - - [12/Dec/2019:15:56:21 +0530] "GET /librarymanagement/ HTTP/1.1" 200 57
+0:0:0:0:0:0:0:1 - - [12/Dec/2019:15:59:12 +0530] "POST /librarymanagement/addBook HTTP/1.1" 200 14
+0:0:0:0:0:0:0:1 - - [12/Dec/2019:16:00:39 +0530] "POST /librarymanagement/addBook HTTP/1.1" 200 14
+0:0:0:0:0:0:0:1 - - [12/Dec/2019:16:01:19 +0530] "POST /librarymanagement/addBook HTTP/1.1" 200 14
+0:0:0:0:0:0:0:1 - - [12/Dec/2019:16:04:35 +0530] "POST /librarymanagement/addBook HTTP/1.1" 200 14

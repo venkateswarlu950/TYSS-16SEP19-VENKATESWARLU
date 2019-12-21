@@ -1,0 +1,10 @@
+package com.tyss.librarymanagement.service;
+
+import com.tyss.librarymanagement.dto.Registration;
+
+public interface LibraryService {
+	
+	
+	public boolean userSave(Registration reg);
+
+}

@@ -1,0 +1,25 @@
+package com.tyss.librarymanagement.dao;
+
+import javax.persistence.EntityManagerFactory;
+
+import org.springframework.stereotype.Repository;
+
+import com.tyss.librarymanagement.dto.Registration;
+
+@Repository
+public class LibraryDAOImpl implements LibraryDAO {
+	
+	private EntityManagerFactory factory;
+
+	@Override
+	public boolean userSave(Registration registration) {
+		
+		
+		
+		
+		
+		
+		return false;
+	}
+
+}

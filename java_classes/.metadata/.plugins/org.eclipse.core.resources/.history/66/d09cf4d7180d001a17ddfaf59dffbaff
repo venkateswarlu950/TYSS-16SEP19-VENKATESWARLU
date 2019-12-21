@@ -1,0 +1,50 @@
+package com.tyss.hibernatewithjpa.manytomany;
+
+import java.util.ArrayList;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.EntityTransaction;
+import javax.persistence.Persistence;
+
+public class TestManyToMany {
+	
+	public static void main(String[] args) {
+		
+		EntityManager em = null;
+		EntityTransaction et = null;
+		
+		Courses c1 = new Courses();
+		c1.setCid(9001);
+		c1.setCname("maths");
+		Courses c2 = new Courses();
+		c2.setCid(9002);
+		c2.setCname("english");
+		Courses c3 = new Courses();
+		c3.setCid(9003);
+		c3.setCname("java");
+		
+		ArrayList<Courses> list = new ArrayList<Courses>();
+		list.add(c1);
+		list.add(c2);
+		list.add(c3);
+
+		try {
+
+
+
+			EntityManagerFactory emf = Persistence.createEntityManagerFactory("TestPersistence");
+			em = emf.createEntityManager();
+			et = em.getTransaction();
+			et.begin();
+			
+			
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+			et.rollback();
+		}
+		em.close();
+	}
+
+}

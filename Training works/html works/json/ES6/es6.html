@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>ES6 functions</h1>
+</body>
+<script>
+const promise = new Promise(function(resolve, reject){
+if(30>10){
+    resolve([{
+        name : 'steve',
+        age : 60
+
+    },{
+        name : 'machine',
+        age : 60
+    },{
+      name : 'newton',
+      age : 55
+    }]);
+}else{
+    reject('no it is not true');
+}
+});
+promise.then(function(data){
+    console.log('my success message::',data);
+
+}).catch(function(err){
+console.log('failur message::',err);
+})
+
+function outerFunction(counter){
+
+    function innerFunction(){
+         let count;
+         count = counter+10;
+         return count;
+
+    }
+    return innerFunction;
+}
+
+let innerFun = outerFunction(20);
+let val = innerFun()
+console.log("count::",val);
+
+</script>
+</html>

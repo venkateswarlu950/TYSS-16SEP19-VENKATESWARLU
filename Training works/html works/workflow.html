@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+   
+</head>
+<body>
+        
+    <h1>work flow </h1>
+</body>
+<script>
+function first(callback){
+   setTimeout(function(){ console.log("first function excuted");
+   callback();
+},5000);
+
+//console.log("excuted");
+}
+function second(){
+    console.log("second function excuyed");
+}
+first(second)
+//second()
+console.log('assigmnet loops::======')
+var per = {
+name : 'venkat',
+age : 25,
+color : 'brown'
+    
+}
+for(var key in per){
+    console.log('values::'+per[key]);
+}
+
+
+var items = [
+    {
+        item : "bag",
+        id : 1,
+        price : 500,
+    },
+    {
+        item : "pen",
+        id : 2,
+        price : 7,
+},
+    {
+        item : "watch",
+        id : 3,
+        price : 5000
+    }
+]
+items.forEach(function(values){
+console.log("items::", values);
+})
+var s = ['even','odd','const']
+for(var i=0;i<s.length;i++){
+    cons.lo(i);
+
+}
+for(var index of s){
+    console.log(s)
+}
+for(var i in s){
+    console.log(s[i]);
+}
+var obj = [{
+    name : "writer",
+    age = 60
+}]
+for(var i in obj){
+    console.log(obj(i));
+}
+obj.forEach(function(index){
+console.log(index);
+});
+var name;
+var name = 'palwan';
+name = 'chiruta';
+
+//console.log(name1);
+let name1;
+//let name =  'kabir';
+name1 = 'druva';
+
+//const name2;
+const name2 = 'girl';
+//name2 = 'syra';
+
+
+for(let i=0;i<5;i++){
+    console.log("inside loop::"+i);
+}
+console.log("out side::",i);
+
+
+</script>
+</html>

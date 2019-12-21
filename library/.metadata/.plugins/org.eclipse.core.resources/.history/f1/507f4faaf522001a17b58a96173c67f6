@@ -1,0 +1,5 @@
+package com.tyss.stm.controller;
+
+public class ProductController {
+
+}

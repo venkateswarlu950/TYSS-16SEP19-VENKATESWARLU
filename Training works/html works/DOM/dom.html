@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<h1 id="demo">DOM Examples</h1>
+<p>hello world!!!</p> 
+
+
+<script>
+    let h1 = document.getElementById('demo');
+    console.log(h1);
+    console.log(h1.textContent);
+    h1.textContent = 'Good eveening';
+
+    let buttonelement = document.createElement('button');
+    buttonelement.textContent = 'click me!!'
+    console.log(buttonelement);
+
+    document.body.append(buttonelement);
+
+    let ul = document.createElement('ul');
+    let li1 = document.createElement('li');
+    let li2 = document.createElement('li');
+    let li3 = document.createElement('li');
+
+    li1.textContent = 'java';
+    li2.textContent = 'sql';
+    li3.textContent  = 'spring';
+    ul.append(li1);
+    ul.append(li2);
+    ul.append(li3);
+    document.body.append(ul);
+
+    h1.style.color = "red";
+    h1.style.fontSize = '20px';
+    </script>
+    
+</body>
+</html>

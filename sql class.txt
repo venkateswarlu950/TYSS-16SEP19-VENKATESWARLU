@@ -1,0 +1,237 @@
+Enter password: ****
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 12
+Server version: 5.7.27-log MySQL Community Server (GPL)
+
+Copyright (c) 2000, 2019, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sakila             |
+| sys                |
+| world              |
++--------------------+
+6 rows in set (0.02 sec)
+
+mysql> use world;
+Database changed
+mysql> select * from emp;
++------+--------+--------+--------+-----------+------+----------+
+| id   | name   | depart | salary | job       | age  | departId |
++------+--------+--------+--------+-----------+------+----------+
+|    1 | venkat | cse    |  25000 | NULL      | NULL |     NULL |
+|    2 | balaji | mech   |  20000 | NULL      | NULL |     NULL |
+|    3 | srinu  | it     |  22000 | NULL      | NULL |     NULL |
+|    4 | ramesh | ece    |  20000 | tester    |   25 |     NULL |
+|    5 | rahul  | ece    |  15000 | develop   |   22 |       50 |
+|    6 | radha  | mech   |  21000 | meanstack |   21 |       10 |
+|    7 | rvia   | it     |  25000 | tester    |   21 |       20 |
+|    7 | rvia   | it     |  25000 | develop   |   24 |       30 |
++------+--------+--------+--------+-----------+------+----------+
+8 rows in set (0.05 sec)
+
+mysql> create table department (deptNo int, deptName varchar(25), location varchar(50));
+Query OK, 0 rows affected (0.66 sec)
+
+mysql> select * from deparment;
+ERROR 1146 (42S02): Table 'world.deparment' doesn't exist
+mysql> select * from department;
+Empty set (0.02 sec)
+
+mysql> create table department (deptNo int, deptName varchar(25), location varchar(50)),primarykey(deptNo);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'primarykey(deptNo)' at line 1
+mysql> create table department (deptNo int, deptName varchar(25), location varchar(50),primarykey(deptNo));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(deptNo))' at line 1
+mysql> create table department (deptNo int, deptName varchar(25), location varchar(50),primary key(deptNo));
+ERROR 1050 (42S01): Table 'department' already exists
+mysql> desc department;
++----------+-------------+------+-----+---------+-------+
+| Field    | Type        | Null | Key | Default | Extra |
++----------+-------------+------+-----+---------+-------+
+| deptNo   | int(11)     | YES  |     | NULL    |       |
+| deptName | varchar(25) | YES  |     | NULL    |       |
+| location | varchar(50) | YES  |     | NULL    |       |
++----------+-------------+------+-----+---------+-------+
+3 rows in set (0.11 sec)
+
+mysql> drop department;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'department' at line 1
+mysql> drop table department;
+Query OK, 0 rows affected (0.22 sec)
+
+mysql> create table department (deptNo int, deptName varchar(50), location varchar(50), primary key(deptNo));
+Query OK, 0 rows affected (0.25 sec)
+
+mysql> desc department;
++----------+-------------+------+-----+---------+-------+
+| Field    | Type        | Null | Key | Default | Extra |
++----------+-------------+------+-----+---------+-------+
+| deptNo   | int(11)     | NO   | PRI | NULL    |       |
+| deptName | varchar(50) | YES  |     | NULL    |       |
+| location | varchar(50) | YES  |     | NULL    |       |
++----------+-------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> insert into department values(301,'mech','hyd'),(302,'cse','che'),(303,'bng','mysore'),(304,'ece','pune');
+Query OK, 4 rows affected (0.08 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+
+mysql> select * from department;
++--------+----------+----------+
+| deptNo | deptName | location |
++--------+----------+----------+
+|    301 | mech     | hyd      |
+|    302 | cse      | che      |
+|    303 | bng      | mysore   |
+|    304 | ece      | pune     |
++--------+----------+----------+
+4 rows in set (0.02 sec)
+
+mysql> select * from emp where salary=(select max(salary from emp));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'from emp))' at line 1
+mysql> select * from emp where salary=(select max(salary) from emp));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+mysql> select * from emp where salary=(select max(salary) from emp);
++------+--------+--------+--------+---------+------+----------+
+| id   | name   | depart | salary | job     | age  | departId |
++------+--------+--------+--------+---------+------+----------+
+|    1 | venkat | cse    |  25000 | NULL    | NULL |     NULL |
+|    7 | rvia   | it     |  25000 | tester  |   21 |       20 |
+|    7 | rvia   | it     |  25000 | develop |   24 |       30 |
++------+--------+--------+--------+---------+------+----------+
+3 rows in set (0.03 sec)
+
+mysql> ^C
+mysql> ^C
+mysql> select salary from emp where salary!=(select max(salary) from emp);
++--------+
+| salary |
++--------+
+|  20000 |
+|  22000 |
+|  20000 |
+|  15000 |
+|  21000 |
++--------+
+5 rows in set (0.00 sec)
+
+mysql> select max(salary) from emp where salary!=(select max(salary) from emp);
++-------------+
+| max(salary) |
++-------------+
+|       22000 |
++-------------+
+1 row in set (0.00 sec)
+
+any and all operator:-
+
+any condition satisified mention in any values which we precidence in any operator.
+
+all , it is satisified all conditions which we precidence inside it.
+
+multi row sub query:-
+
+select * from tbalename where column_name operator as any, all, in (inner query);
+multiple row set output will get.
+
+write a query display name of emp whose working in location which has atleset on a in the notation  
+
+mysql> select name from emp where departId in (select deptNo from department where location like 'hy%');
++-------+
+| name  |
++-------+
+| vinod |
++-------+
+1 row in set (0.00 sec)
+
+mysql>
+
+select * from emp cross join department;
+
+1	venkat	cse	22000	tester	18	302	arial	301	mech	hyd
+1	venkat	cse	22000	tester	18	302	arial	302	cse	che
+1	venkat	cse	22000	tester	18	302	arial	303	bng	mysore
+1	venkat	cse	22000	tester	18	302	arial	304	ece	pune
+2	balaji	mech	20000	develop	22	303	bhuvaneswar	301	mech	hyd
+2	balaji	mech	20000	develop	22	303	bhuvaneswar	302	cse	che
+2	balaji	mech	20000	develop	22	303	bhuvaneswar	303	bng	mysore
+2	balaji	mech	20000	develop	22	303	bhuvaneswar	304	ece	pune
+3	srinu	it	22000	meanstack	20	304	chennai	301	mech	hyd
+3	srinu	it	22000	meanstack	20	304	chennai	302	cse	che
+3	srinu	it	22000	meanstack	20	304	chennai	303	bng	mysore
+3	srinu	it	22000	meanstack	20	304	chennai	304	ece	pune
+4	ramesh	ece	20000	tester	25	301	hyd	301	mech	hyd
+4	ramesh	ece	20000	tester	25	301	hyd	302	cse	che
+4	ramesh	ece	20000	tester	25	301	hyd	303	bng	mysore
+4	ramesh	ece	20000	tester	25	301	hyd	304	ece	pune
+5	rahul	ece	15000	develop	22	50	che	301	mech	hyd
+5	rahul	ece	15000	develop	22	50	che	302	cse	che
+5	rahul	ece	15000	develop	22	50	che	303	bng	mysore
+5	rahul	ece	15000	develop	22	50	che	304	ece	pune
+6	radha	mech	21000	meanstack	21	10	hyd	301	mech	hyd
+6	radha	mech	21000	meanstack	21	10	hyd	302	cse	che
+6	radha	mech	21000	meanstack	21	10	hyd	303	bng	mysore
+6	radha	mech	21000	meanstack	21	10	hyd	304	ece	pune
+7	rvia	it	25000	develop	24	30	hyd	301	mech	hyd
+7	rvia	it	25000	develop	24	30	hyd	302	cse	che
+7	rvia	it	25000	develop	24	30	hyd	303	bng	mysore
+7	rvia	it	25000	develop	24	30	hyd	304	ece	pune
+8	vinod	cse	18000	tester	22	301	adhilabad	301	mech	hyd
+8	vinod	cse	18000	tester	22	301	adhilabad	302	cse	che
+8	vinod	cse	18000	tester	22	301	adhilabad	303	bng	mysore
+8	vinod	cse	18000	tester	22	301	adhilabad	304	ece	pune
+
+
+inner join is used matching records obtain from both the tables .
+
+SELECT * FROM emp AS e INNER JOIN department AS d WHERE e.departId=d.deptNo;
+
+1	venkat	cse	22000	tester	18	302	arial	302	cse	che
+2	balaji	mech	20000	develop	22	303	bhuvaneswar	303	bng	mysore
+3	srinu	it	22000	meanstack	20	304	chennai	304	ece	pune
+4	ramesh	ece	20000	tester	25	301	hyd	301	mech	hyd
+8	vinod	cse	18000	tester	22	301	adhilabad	301	mech	hyd
+
+
+SELECT * FROM emp AS e INNER JOIN department AS d ON e.departId=d.deptNo;
+
+left outer:-
+it is combination of innerjoin and retrive the mathch records in the left tables and unmatched records whic 
+has present as null.
+
+right join:-
+
+SELECT * FROM emp AS e RIGHT JOIN department AS d ON e.departId=d.deptNo;
+
+it is combination of innerjoin and retrive the mathch records in the right tables and unmatched records whic 
+has present as null.
+
+natural:- is similar to inner join where we dont specify the join condition 
+
+SELECT * FROM emp NATURAL JOIN department;
+
+self join :- joing of two same table is known as , we use this join when ever data to be selected with in the same table but 
+it is in different records.
+
+among the key attributes choosen to identify the record in the table i called primary key.
+non primary key:- except primary key aprt in the table is called non primary key.
+
+composite key:- the combination of 2 or more key attributes which is use to identyfi unique. data in table.
+super key:- the set of all the key  attributes knows as .
+
+total functional dependancy
+partial functional dependency
+transtive ""
+
+the process of redency into to form is called normalization.

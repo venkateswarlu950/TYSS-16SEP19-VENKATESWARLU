@@ -1,0 +1,31 @@
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<!-- main -->
+<section class="main">
+	<div class="points"></div>
+	<div class="shield-left"></div>
+	<div class="shield-right"></div>
+	<!-- card -->
+	<div class="card">
+		<div class="detail">
+		<div class="detail-images"><img src="https://cdn.pixabay.com/photo/2016/11/18/12/05/white-male-1834100_960_720.jpg" alt="Picture" style="width: inherit;"></div>
+		<h3>{{details.name}}</h3>
+		{{details.sno}}
+		
+		<h4>Student</h4>
+		<p>Please use request Option,<br> to Request the books...</p>
+		<button class="btn btn-outline-black" routerLink="/approveList">Approved Books</button>
+		<a class="mail" routerLink="/send">Request Book<i class="fa fa-envelope fa-lg message"></i></a>
+		</div>
+	</div>
+<!-- /card -->
+</section>
+<!-- /main -->
+<div class="copyright">
+<p>User Profile</p>
+<p>Please  <a href="#">Request the Book</a></p>
+<p>Accesesed by <a href="" title="MohamadReza Deylami" target="_blank">User</a></p>
+</div>

@@ -1,0 +1,78 @@
+package com.tyss.stm.stockmanagementsystem.dto;
+
+import java.util.List;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="Product_Info")
+public class Product {
+	
+	@Id
+	@Column
+	@GeneratedValue
+	private int id;
+	@Column
+	private String name;
+	@Column
+	private String catg;
+	@Column
+	private String company;
+	@Column
+	private int quantity;
+	@Column
+	private Double price;
+	@ManyToMany(cascade = CascadeType.ALL, mappedBy = "Product_Info")
+	private List<Order_Info> order;
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getCatg() {
+		return catg;
+	}
+	public void setCatg(String catg) {
+		this.catg = catg;
+	}
+	public String getCompany() {
+		return company;
+	}
+	public void setCompany(String company) {
+		this.company = company;
+	}
+	public int getQuantity() {
+		return quantity;
+	}
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
+	public Double getPrice() {
+		return price;
+	}
+	public void setPrice(Double price) {
+		this.price = price;
+	}
+	public List<Order_Info> getOrder() {
+		return order;
+	}
+	public void setOrder(List<Order_Info> order) {
+		this.order = order;
+	}
+	
+	
+
+}

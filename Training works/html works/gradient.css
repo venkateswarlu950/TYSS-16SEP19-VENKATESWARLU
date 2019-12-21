@@ -1,0 +1,4 @@
+#grd{
+    height: 500px;
+    background:radial-gradient(red, black, blue, green)
+}

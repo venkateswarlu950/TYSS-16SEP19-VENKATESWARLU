@@ -1,0 +1,61 @@
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="margin-top: -70%;">
+        Launch demo modal
+      </button>
+      
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+<form action="" class="col-md-10 offset-1 mt-5 card card-body" #form="ngForm" (ngSubmit)="addEmployeeData(form)">
+    <h1 class="text-center bg-dark text-white">Add Employee Data</h1>
+    <div class="form-group">
+        <input type="number" name="empno" id="empno" class="form-control" placeholder="Enter Employee Id...." #empno="ngModel" ngModel required minlength=4>
+        <div *ngIf="empno.touched && empno.invalid">
+        <p class="alert alert-danger" *ngIf="empno.errors.required || empno.errors.minlength">*This Field is required</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <input type="text" name="ename" id="ename" class="form-control" placeholder="Enter Employee Name...." #ename="ngModel" ngModel required>
+        <div *ngIf="ename.touched && ename.invalid">
+        <p class="alert alert-danger" *ngIf="ename.errors.required">*This Field is required</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <input type="text" name="job" id="job" class="form-control" placeholder="Enter Job Role...." #job="ngModel" ngModel required>
+        <div *ngIf="job.touched && job.invalid">
+        <p class="alert alert-danger" *ngIf="job.errors.required">*This Field is required</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <input type="number" name="mgr" id="mgr" class="form-control" placeholder="Enter Manager Number...." #mgr="ngModel" ngModel required>
+        <div *ngIf="mgr.touched && mgr.invalid">
+        <p class="alert alert-danger" *ngIf="mgr.errors.required">*This Field is required</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <input type="date" name="hiredate" id="hiredate" class="form-control" placeholder="Enter Hire Date...." #hiredate="ngModel" ngModel required>
+        <div *ngIf="hiredate.touched && hiredate.invalid">
+        <p class="alert alert-danger" *ngIf="hiredate.errors.required">*This Field is required</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <input type="number" name="deptid" id="deptid" class="form-control" placeholder="Enter Department Date...." #deptid="ngModel" ngModel required>
+        <div *ngIf="deptid.touched && deptid.invalid">
+        <p class="alert alert-danger" *ngIf="deptid.errors.required">*This Field is required</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-outline-success float-right" [disabled]="form.invalid" >Add Employee</button>
+    </div>
+</form>
+</div>
+</div>
+</div>
+</div>

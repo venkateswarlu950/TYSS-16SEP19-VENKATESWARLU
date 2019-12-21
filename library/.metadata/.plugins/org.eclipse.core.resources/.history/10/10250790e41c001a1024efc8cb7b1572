@@ -1,0 +1,60 @@
+package com.tyss.librarymanagement.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.tyss.librarymanagement.dao.LibraryDAO;
+import com.tyss.librarymanagement.dto.AddBook;
+import com.tyss.librarymanagement.dto.Registration;
+
+@Service
+public class LibraryServiceImpl implements LibraryService {
+	
+	@Autowired
+	private LibraryDAO dao;
+
+	@Override
+	public boolean userSave(Registration reg) {
+		
+		return dao.userSave(reg);
+	}
+
+	@Override
+	public Registration loginUser(String name, String pwd) {
+		
+		return dao.login(name, pwd);
+	}
+
+	@Override
+	public boolean bookSave(AddBook book) {
+		
+		return dao.bookSave(book);
+	}
+
+	@Override
+	public boolean deleteBook(int id) {
+		
+		return dao.delBook(id);
+	}
+
+	@Override
+	public List<AddBook> bookList() {
+		
+		return dao.bookList();
+	}
+
+	@Override
+	public boolean update(AddBook book) {
+		// TODO Auto-generated method stub
+		return dao.update(book);
+	}
+
+	@Override
+	public boolean request(int sno, List<AddBook> list) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

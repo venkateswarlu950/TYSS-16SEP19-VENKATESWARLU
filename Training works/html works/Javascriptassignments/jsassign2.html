@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Loops</title>
+</head>
+<body>
+    <h1>js assignment loops</h1>
+    <script>
+    var a = ["v","s","t","p"];
+    for(var i=0;i<a.length;i++){
+        console.log('letters::'+a[i]);
+    }
+for(var index of a){
+console.log('values2::'+index);
+}
+for(var value in a){
+    console.log('values3::'+a[value]);
+}
+    a.forEach(function(index, value){
+    console.log("values4::"+index);
+    });
+
+    console.log("-------------------------");
+
+    var movies = 
+    {
+        Movie : "gabbar singh",
+        hero : 'pavan kalyan',
+        Rem : 1000000000
+    }
+
+var text = "";
+var x;
+for (x in movies) {
+  text += movies[x];
+  console.log('for in loop::'+text)
+}
+
+console.log('=====================');
+var person = {fname:"John", lname:"Doe", age:25};
+
+var text = "";
+var x;
+for (x in person) {
+  text += person[x];
+  console.log('for in loop::'+text)
+}
+var arry = ['hour','minuts','sec']
+
+for(var i of arry){
+    console.log(i);
+
+}
+for(var i in arry){
+    console.log(arry[i]);
+}
+arry.forEach(function(i){
+    console.log(i);
+})
+
+var studeis = [
+
+    {
+name : 'gems',
+book : 2
+    },
+    
+];
+for(i in studeis){
+    console.log(studeis[i]);
+}
+studeis.forEach(function(i){
+    console.log(i);
+})
+
+console.log('assigmnet loops::======')
+var per = {
+name : 'venkat',
+age : 25,
+color : 'brown'
+    
+}
+for(var key in per){
+    console.log('values::'+per[key]);
+}
+
+
+var items = [
+    {
+        item : "bag",
+        id : 1,
+        price : 500,
+    },
+    {
+        item : "pen",
+        id : 2,
+        price : 7,
+},
+    {
+        item : "watch",
+        id : 3,
+        price : 5000
+    }
+]
+items.forEach(function(values){
+console.log("items::", values);
+})
+var s = ['even','odd','const']
+for(var i=0;i<s.length;i++){
+    cons.lo(i);
+
+}
+for(var index of s){
+    console.log(s)
+}
+for(var i in s){
+    console.log(s[i]);
+}
+var obj = [{
+    name : "writer",
+    age = 60
+}]
+for(var i in obj){
+    console.log(obj(i));
+}
+obj.forEach(function(index){
+console.log(index);
+});
+
+var per = {
+add : 'nellore',
+dist : 007,
+village : 'vinja'
+    
+}
+for(var key in per){
+    console.log('values::'+per[key]);
+}
+
+
+var metirial = [
+    {
+        flip : "bag",
+        id : 1,
+        price : 500,
+    },
+    {
+        myntra : "pen",
+        id : 2,
+        price : 7,
+},
+    {
+        amazon: "watch",
+        id : 3,
+        price : 5000
+    }
+]
+items.forEach(function(values){
+console.log("items::", values);
+})
+var s = ['even','odd','const']
+for(var i=0;i<s.length;i++){
+    cons.lo(i);
+
+}
+var obj = [{
+    name : "writer",
+    age = 60
+}]
+for(var i in obj){
+    console.log(obj(i));
+}
+obj.forEach(function(index){
+console.log(index);
+});
+
+var per = {
+name : 'ravi',
+age : 36,
+color : 'white'
+    
+}
+for(var key in per){
+    console.log('values::'+per[key]);
+}
+
+var movies = 
+    {
+        hollywood : "kabir singh",
+        hero : 'kalyan',
+        Rem : 1000
+    }
+
+var text = "";
+var x;
+for (x in movies) {
+  text += movies[x];
+  console.log('for in loop::'+text)
+}
+
+console.log('=====================');
+var person = {fname:"govi", lname:"reddy", age:25};
+
+var text = "";
+var x;
+for (x in person) {
+  text += person[x];
+  console.log('for in loop::'+text)
+}
+var arry = ['hour','minuts','sec']
+
+for(var i of arry){
+    console.log(i);
+
+}
+
+var metirial = [
+    {
+        flip : "bag",
+        id : 1,
+        price : 500,
+    },
+    {
+        myntra : "pen",
+        id : 2,
+        price : 7,
+},
+    {
+        amazon: "watch",
+        id : 3,
+        price : 5000
+    }
+]
+items.forEach(function(values){
+console.log("items::", values);
+})
+var s = ['even','odd','const']
+for(var i=0;i<s.length;i++){
+    cons.lo(i);
+
+}
+var obj = [{
+    name : "writer",
+    age = 60
+}]
+for(var i in obj){
+    console.log(obj(i));
+}
+obj.forEach(function(index){
+console.log(index);
+});
+
+var per = {
+name : 'ravi',
+age : 36,
+color : 'white'
+    
+}
+for(var key in per){
+    console.log('values::'+per[key]);
+}
+var langs = 
+    {
+        lang1 : "telugui",
+        book : 'kalyan',
+        cost: 1000
+    }
+
+var text = "";
+var x;
+for (x in langs) {
+  text += langs[x];
+  console.log('for in loop::'+text)
+}
+
+console.log('=====================');
+var person = {fname:"govi", lname:"reddy", age:25};
+
+var text = "";
+var x;
+for (x in person) {
+  text += person[x];
+  console.log('for in loop::'+text)
+}
+
+
+
+
+console('===========================')
+
+    </script>
+</body>
+</html>

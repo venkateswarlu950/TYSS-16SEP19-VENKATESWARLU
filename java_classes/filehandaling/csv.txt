@@ -1,0 +1,4 @@
+15,madan,10000,F
+16,krishna,12000,M
+17,abbas,13000,M
+18,hrithik,14000,F

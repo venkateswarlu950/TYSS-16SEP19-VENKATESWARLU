@@ -1,0 +1,7 @@
+package com.tyss.springcore.di;
+
+import org.springframework.beans.factory.config.BeanPostProcessor;
+
+public class BeanPostProcesser implements BeanPostProcessor {
+
+}

@@ -1,0 +1,44 @@
+
+<div class="col-md-4 offset-5 mt-4">
+    <div class="span3 well">
+
+        <a href="" data-toggle="modal" data-target="#myModal"><img src="https://cdn.pixabay.com/photo/2015/03/04/22/35/head-659651_960_720.png" name="aboutme" width="140" height="140" class="img-circle"></a>
+       <h3>&nbsp;&nbsp;&nbsp;{{details.name}}</h3>
+       <h3>&nbsp;&nbsp;&nbsp;User Id {{details.sno}}</h3>
+        <em>click on Actions</em>
+		
+    
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                    
+                    
+                <div class="modal-body">
+                    
+                    <img src="https://cdn.pixabay.com/photo/2017/06/08/20/18/computer-icon-2384752_960_720.png" name="aboutme" width="140" height="140" border="0" class="img-circle">
+                    <h3 class="media-heading">{{details.name}}</h3>
+                    <span><button type="button" class="btn btn-success " data-dismiss="modal" routerLink='/add'>Add</button></span>
+                        <span class="label label-warning"> : Please Click on add button to add books</span><br><br>
+                        <span><button type="button" class="btn btn-primary " data-dismiss="modal" routerLink='/update'>Update</button></span>
+                        <span class="label label-warning"> : Please Click on update button to update books</span><br><br>
+                        <span><button type="button" class="btn btn-danger " data-dismiss="modal" routerLink='/delete'>Delete</button></span>
+                        <span class="label label-warning warning"> : Please Click on delete button to delete books</span><br><br>
+                        <span><button type="button" class="btn btn-success " data-dismiss="modal" routerLink='/reqList'>Books Request List</button></span>
+                        <span class="label label-warning"> : Please Click on button to show request List</span><br><br>
+
+
+
+                       
+                    <p class="text-left"><strong><b>Note:</b> </strong><br>
+                        User, Whate are the Options you choosed and do operations will Affect in Database</p>
+                    <br>
+                    
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        var age=22;
+        var name='venkat';
+        var hobbi=true;
+        var value=null;
+        var matching;
+        console.log('age is ::'+age);
+        console.log('name is ::'+name);
+        console.log('hobbi is ::'+hobbi);
+        console.log('value is ::'+value);
+        console.log('matching  is ::'+matching);
+    </script>
+</head>
+<body>
+    <script>
+    var friuts =['orange','apple','html','java script'];
+    console.log('my friuts are ::'+friuts);
+    console.log('friuts length::'+friuts.length);
+    console.log('my first elemnrt::'+friuts[0]);
+
+var person ={
+
+name:'venkat chowdary',
+age: 22,
+mobiel: 6321458,
+address: 'nellore',
+getFullname : function(){
+    return this.name+ ''+this.mobiel;
+}
+}
+var fname= person.name;
+    var add=person.address;
+    var fullname=person.getFullname();
+    console.log('in bidy name ::'+fname);
+    console.log('my address::'+add);
+    console.log('my full nam ewith addres ::'+fullname);
+
+    </script>
+    <script>
+    var person = new Object();
+    person.name='ravi prakash';
+    var f=new Object('ravi chandra');
+    var c=new Object(true);
+    console.log('name::'+person.name);
+    console.log('f is ::'+f);
+    console.log('c is::'+c);
+
+
+    var d=10;
+    var b='pavan';
+    var a=true;
+    var m=null;
+console.log(d+'::'+b+'::'+a+'::'+m);
+
+
+    var cars = new Array("Saab", "Volvo", "BMW");
+    console.log('my cars::'+cars);
+    var vehical =['bus','speed','bio metric', 150];
+console.log('vehical::'+vehical);
+
+    var myStringArray = ["Hello","World"];
+var arrayLength = myStringArray.length;
+for (var i = 0; i < arrayLength; i++) {
+    console.log(myStringArray[i]);
+    
+}
+const array = ["one", "two", "three"]
+array.forEach(function (item, index) {
+  console.log(item, index);
+});
+    </script>
+</body>
+<script src="jsassign1.js"></script>
+</html>

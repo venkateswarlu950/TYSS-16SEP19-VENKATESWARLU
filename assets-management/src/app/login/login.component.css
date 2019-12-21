@@ -1,0 +1,16 @@
+ .loginpage{
+    background:rgba(0,0,0,0.5);
+    transform: scale(0.8,0.6);
+    margin-left: 70%;
+    
+   
+}
+
+.main{
+    background-image: url("img\leaves-4677594_960_720.jpg");
+    transform: scale(1.0,2.0);
+    background-size: cover ;
+
+} 
+
+

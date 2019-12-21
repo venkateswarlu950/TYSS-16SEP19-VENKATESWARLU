@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap-4.3.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="fontawesome-free-5.11.2-web/css/all.css">
+</head>
+<body>
+    <div class="container">
+    <h1>Login Form</h1>
+    <form action="">
+<label for="user">User Name</label><br>
+<input type="text" id="user" onkeyup="userChexk()"><br>
+<p id="msg1" style="color: red"></p>
+<label for="pwd">Password</label><br>
+<input type="password" id="pwd" onkeyup="pwdCheck()"><br><br>
+
+<div class="input-group">
+    <div class="input-group-prepend">
+      <div class="input-group-text" id="btnGroupAddon"><i class="far fa-eye" onclick="checkPwd()"></i></div>
+    </div>
+    <input type="password" class="form-control col-md-2" placeholder="Enter password" id="pwd" aria-label="Input group example" aria-describedby="btnGroupAddon">
+  </div>
+
+<p id="msg2" style="color: red"></p>
+<input type="checkbox" onclick="checkPwd()" id="check"><br><br>
+<input type="submit" value="Submit" style="color: green" id="mySubmit">
+<button type="button" class="btn btn-lg btn-primary" disabled>Login</button>
+</form>
+</div>
+</body>
+<script>
+function checkPwd() { 
+            var temp = document.getElementById("pwd"); 
+            if (temp.type === "password") { 
+                temp.type = "text"; 
+            } 
+            else { 
+                temp.type = "password"; 
+            } 
+        } 
+        document.getElementById("mySubmit").disabled = true;
+
+function userChexk(){
+let x = document.getElementById('user').value;
+
+if(x.length < 5){
+    document.getElementById('msg1').innerHTML = 'The user length should be 5';
+}
+
+}
+function pwdCheck(){
+    let s = document.getElementById('pwd').value;
+    if(s.length < 6)
+    {
+        document.getElementById('msg2').innerHTML = 'Password is too short';
+    }
+}
+
+
+</script>
+</html>

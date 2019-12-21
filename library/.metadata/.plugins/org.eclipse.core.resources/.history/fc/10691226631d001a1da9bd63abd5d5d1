@@ -1,0 +1,86 @@
+package com.tyss.librarymanagement.dto;
+
+import java.util.Date;
+import java.util.List;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+
+import net.bytebuddy.build.ToStringPlugin.Exclude;
+
+@Entity
+@Table(name="AddBook")
+public class AddBook {
+	
+	@Id
+	@Column
+	@GeneratedValue
+	private int bId;
+	@Column
+	private String bName;
+	@Column
+	private String author;
+	@Column
+	private int ISDN;
+	@Column
+	private Double price;
+	@Column
+	@JsonFormat(pattern = "yyy-MM-dd")
+	private Date DOE;
+	@Exclude
+	@ManyToMany(cascade = CascadeType.ALL, mappedBy = "bookList")
+	private List<Registration> users;
+	public int getbId() {
+		return bId;
+	}
+	public void setbId(int bId) {
+		this.bId = bId;
+	}
+	public String getbName() {
+		return bName;
+	}
+	public void setbName(String bName) {
+		this.bName = bName;
+	}
+	public String getAuthor() {
+		return author;
+	}
+	public void setAuthor(String author) {
+		this.author = author;
+	}
+	public int getISDN() {
+		return ISDN;
+	}
+	public void setISDN(int iSDN) {
+		ISDN = iSDN;
+	}
+	public Double getPrice() {
+		return price;
+	}
+	public void setPrice(Double price) {
+		this.price = price;
+	}
+	public Date getDOE() {
+		return DOE;
+	}
+	public void setDOE(Date dOE) {
+		DOE = dOE;
+	}
+	public List<Registration> getUsers() {
+		return users;
+	}
+	public void setUsers(List<Registration> users) {
+		this.users = users;
+	}
+	
+	
+	
+
+}

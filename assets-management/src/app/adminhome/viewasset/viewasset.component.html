@@ -1,0 +1,32 @@
+<div class="col-md-4 offset-md-4 ">
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text">Search</span>
+        </div>
+        <input class="form-control ng-untouched ng-pristine ng-valid" type="search" (input)="search($event)">
+    </div>
+</div>
+<div >
+</div>
+<table >
+ <thead>
+    <tr>
+        <th table-primary>AssetId</th>
+        <th table-secondary>AssetName</th>
+        <th table-success>AssetDescription</th>
+        <th table-info>Quantity</th>
+        <th table-warning>AssetStatus</th>
+    </tr>
+ </thead>
+ <tbody>
+        <tr *ngFor='let org of asset'>
+           <td table-primary>{{org.assestid}}</td>
+           <td table-secondary>{{org.assestname}}</td>
+           <td table-success>{{org.assesdesc}}</td>
+           <td table-info>{{org.quantity}}</td>
+           <td table-warning>{{org.status}}</td>
+        </tr>
+ </tbody>
+         <button type="button" value="edit" (click)='edit()'>Edit</button>
+         <button type="button" value="delete">Delete</button>
+</table>

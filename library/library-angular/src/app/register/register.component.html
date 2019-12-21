@@ -1,0 +1,73 @@
+<div class="col-md-4 mt-5 card card-body offset-4">
+<form #form="ngForm" (ngSubmit)='register(form)' method="POST">
+	<div class="form-group input-group">
+		<div class="input-group-prepend">
+		    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+		 </div>
+		<input name="name" required #name='ngModel' ngModel class="form-control" 
+		placeholder="Full name" type="text" minlength="4">
+		<div *ngIf ="name.touched && name.invalid">
+		<p *ngIf="name.errors.required" class="text-danger">*This feild is required</p>
+		<p *ngIf="name.errors.minlength" class="text-danger">*Name must be at least 4 characters long</p>
+		</div>
+    </div> <!-- form-group// -->
+    <div class="form-group input-group">
+    	<div class="input-group-prepend">
+		    <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+		 </div>
+		<input name="email" required #email='ngModel' ngModel class="form-control" 
+		required placeholder="Email address" type="email" required pattern="/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/">
+		<div *ngIf ="email.touched && email.invalid">
+			<p *ngIf="email.errors.required" class="text-danger">*This feild is required</p>
+			<p *ngIf="email.errors.pattern" class="text-danger">*Email must follow rules</p>
+			</div>
+    </div> <!-- form-group// -->
+    <div class="form-group input-group">
+    	<div class="input-group-prepend">
+		    <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
+		</div>
+		<select class="custom-select" style="max-width: 120px;">
+		    <option selected="">+91</option>
+		</select>
+		<input name="phNo" type="text" #phNo='ngModel' required ngModel class="form-control" 
+		placeholder="Phone number" type="text" max="10" pattern="[6789][0-9]{9}">
+		<div *ngIf ="phNo.touched && phNo.invalid">
+			<p *ngIf="phNo.errors.required" class="text-danger">*This feild is required</p>
+			<p *ngIf="phNo.errors.pattern" class="text-danger">*only (0-9)</p>
+			</div>
+    </div> <!-- form-group// -->
+    <div class="form-group input-group">
+    	<div class="input-group-prepend">
+		    <span class="input-group-text"> <i class="fa fa-building"></i> </span>
+		</div>
+		<select class="form-control" name="type" #type='ngModel' ngModel required>
+
+			<option selected=""> Select User type</option>
+			<option value="user">User</option>
+			<option value="lib">Librarian</option>
+			<div *ngIf ="type.touched && type.invalid">
+				<p *ngIf="type.errors.required" class="text-danger">*This feild is required</p>
+				</div>
+			
+		</select>
+	</div> <!-- form-group end.// -->
+    <div class="form-group input-group">
+    	<div class="input-group-prepend">
+		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+		</div>
+		<input class="form-control" required placeholder="Create password" type="password" 
+		name="pwd" #pwd='ngModel' ngModel pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+		title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
+		<div *ngIf ="pwd.touched && pwd.invalid">
+			<p *ngIf="pwd.errors.required" class="text-danger">*This feild is required</p>
+			<p *ngIf="pwd.errors.pattern" class="text-danger">*password must containe one upper case and one symbol and one number</p>
+			</div>
+    </div> <!-- form-group// -->
+    <!-- form-group// -->                                      
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary btn-block"> Create Account  </button>
+    </div> <!-- form-group// -->      
+    <p class="text-center">Have an account? <a routerLink="/login">Log In</a> </p>                                                                 
+</form>
+</div>
+

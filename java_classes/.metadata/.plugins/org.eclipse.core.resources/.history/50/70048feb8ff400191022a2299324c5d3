@@ -1,0 +1,12 @@
+
+public class MethodOverload {
+public static int add(int a, int b) {
+	System.out.println("add 1 method");
+}
+public static long add(int a, int b) {
+	System.out.println("add 2 method");
+}
+public static void add(int a, byte b) {
+	System.out.println("method 3");
+}
+}

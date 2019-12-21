@@ -1,0 +1,6 @@
+127.0.0.1 - - [15/Dec/2019:19:24:54 +0530] "GET / HTTP/1.1" 404 1074
+0:0:0:0:0:0:0:1 - - [15/Dec/2019:19:26:32 +0530] "GET /librarymanagement/getList HTTP/1.1" 200 843
+0:0:0:0:0:0:0:1 - - [15/Dec/2019:19:37:32 +0530] "GET /librarymanagement/getList HTTP/1.1" 200 843
+0:0:0:0:0:0:0:1 - - [15/Dec/2019:19:37:54 +0530] "GET /librarymanagement/getList HTTP/1.1" 200 843
+0:0:0:0:0:0:0:1 - - [15/Dec/2019:19:43:19 +0530] "GET /librarymanagement/getList HTTP/1.1" 200 843
+0:0:0:0:0:0:0:1 - - [15/Dec/2019:22:35:41 +0530] "GET /librarymanagement/getList HTTP/1.1" 200 843

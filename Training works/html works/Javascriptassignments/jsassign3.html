@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>js assign for operation methods</h1>
+</body>
+<script>
+const mobiles = ['redme','iphone','samsung','nokia']
+console.log(typeof mobiles);
+
+const arryornot = Array.isArray(mobiles);
+console.log(arryornot);
+const mob = mobiles.includes('nokia', 2);
+console.log(mob);
+const add = mobiles.push('realme','sony');
+console.log(add);
+console.log(mobiles);
+const rem = mobiles.pop();
+console.log(rem);
+console.log(mobiles);
+const unshift = mobiles.unshift('icall','xperia');
+console.log(unshift);
+var shift = hobbies.shift();
+console.log(shift);
+
+console.log(mobiles.splice(2,2,'ram','raheem'));
+console.log(mobiles.slice(1,3));
+console.log(mobiles.indexOf('movies',1));
+
+const num = [1,2,3,4,5,6]
+
+var values = num.map(val =>val+50);
+
+console.log('my values::'+values);
+
+var filter = num.filter(val =>{
+    console.log(val);
+    if(val > 3){
+        return true;
+    }
+    else{
+        return false;
+    }
+    
+});
+console.log('filter values::',filter);
+
+
+var str = "Please locate where 'locate' occurs!";
+var pos = str.indexOf("locate");
+console.log(pos);
+var txt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var sln = txt.length;
+var pos = str.lastIndexOf("locate");
+var pos = str.search("locate");
+var str = "Apple, Banana, Kiwi";
+var res = str.slice(7, 13);
+var res = str.substring(7, 13);
+str = "Please visit banglore!";
+var n = str.replace("banglore", "hydreabad");
+var text1 = "Hello venkat!"; 
+var text2 = text1.toUpperCase();
+var text2 = text1.toLowerCase(); 
+var text1 = "ram";
+var text2 = "raheem";
+var text3 = text1.concat(" ", text2);
+var str = "       Hello World!        ";
+alert(str.trim());
+str.charAt(0); 
+var txt = "a,b,c,d,e";
+txt.split(",");        
+txt.split(" ");          
+txt.split("|"); 
+
+
+
+
+</script>
+</html>

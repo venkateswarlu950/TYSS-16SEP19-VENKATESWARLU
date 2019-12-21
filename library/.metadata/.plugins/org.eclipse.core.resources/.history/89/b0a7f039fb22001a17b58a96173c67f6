@@ -1,0 +1,42 @@
+package com.tyss.stm.dto;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="Order_Info")
+public class Order_Info {
+	
+	@Id
+	@Column
+	@GeneratedValue
+	private int oId;
+	@Column
+	private Double totalPrice;
+	@Column
+	private Double totalPriceWithGst;
+	public int getoId() {
+		return oId;
+	}
+	public void setoId(int oId) {
+		this.oId = oId;
+	}
+	public Double getTotalPrice() {
+		return totalPrice;
+	}
+	public void setTotalPrice(Double totalPrice) {
+		this.totalPrice = totalPrice;
+	}
+	public Double getTotalPriceWithGst() {
+		return totalPriceWithGst;
+	}
+	public void setTotalPriceWithGst(Double totalPriceWithGst) {
+		this.totalPriceWithGst = totalPriceWithGst;
+	}
+	
+	
+
+}

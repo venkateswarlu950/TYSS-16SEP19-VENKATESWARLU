@@ -1,0 +1,23 @@
+
+<form #form="ngForm" (ngSubmit)='addBook(form)' class="text-center border border-light p-5" method="POST">
+     
+        <p class="h4 mb-4">Add Book Here</p>
+    
+        <div class="col-md-5 col-mr-4 card card-body offset-4">
+        <input name="bName" #bName='ngModel' ngModel type="text" id="defaultContactFormName" class="form-control mb-4" placeholder="Book Name">
+    
+        
+        <input name="author" #author='ngModel' ngModel type="text" id="defaultContactFormEmail" class="form-control mb-4" placeholder="Author Name">
+    
+        <input name="isdn" #isdn='ngModel' ngModel type="number" id="defaultContactFormEmail" class="form-control mb-4" placeholder="ISDN Number">
+
+        <input name="price" #price='ngModel' ngModel type="number" id="defaultContactFormEmail" class="form-control mb-4" placeholder="Price">
+
+        <input name="doe" #doe='ngModel' ngModel type="date" id="defaultContactFormEmail" class="form-control mb-4" placeholder="Book date entry">
+    
+       
+        <button class="btn btn-info btn-block" type="submit">Add</button>
+        </div>
+    
+    </form>
+    

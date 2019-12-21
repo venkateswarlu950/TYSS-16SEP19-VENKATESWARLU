@@ -1,0 +1,5 @@
+package com.tyss.librarymanagement.service;
+
+public interface LibraryService {
+
+}

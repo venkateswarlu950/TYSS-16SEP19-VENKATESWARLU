@@ -1,0 +1,5 @@
+package com.tyss.springboot.repo;
+
+public interface EmployeeRepo {
+
+}

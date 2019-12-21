@@ -1,0 +1,19 @@
+package com.tyss.librarymanagement.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.tyss.librarymanagement.dao.LibraryDAO;
+import com.tyss.librarymanagement.dto.Registration;
+
+public class LibraryServiceImpl implements LibraryService {
+	
+	@Autowired
+	private LibraryDAO dao;
+
+	@Override
+	public boolean userSave(Registration reg) {
+		
+		return dao.userSave(reg);
+	}
+
+}

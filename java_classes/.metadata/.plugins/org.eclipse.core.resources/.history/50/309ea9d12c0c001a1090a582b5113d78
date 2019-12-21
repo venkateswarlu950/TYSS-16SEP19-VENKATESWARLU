@@ -1,0 +1,40 @@
+package com.ust.hibernatewithjpa;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.EntityTransaction;
+import javax.persistence.Persistence;
+
+import com.tyss.hibernatewithjpa.dto.ProductInfo;
+
+public class ReattachingDemo {
+
+	public static void main(String[] args) {
+		EntityTransaction et = null;
+		EntityManager em = null;
+
+		try {
+			EntityManagerFactory emf = Persistence.createEntityManagerFactory("TestPersistence");
+			em = emf.createEntityManager();
+			et = em.getTransaction();
+			et.begin();
+
+			ProductInfo pf = em.find(ProductInfo.class, 101);
+			System.out.println(em.contains(pf));
+			em.detach(pf);
+			System.out.println(em.contains(pf));
+
+			pf.setName("mobile");
+			System.out.println("update sucessfully");
+			et.commit();
+			em.close();
+		}
+		catch (Exception e) {
+
+			e.printStackTrace();
+			et.rollback();
+		}
+		em.close();
+	}
+
+}

@@ -1,0 +1,58 @@
+package com.tyss.librarymanagement.dto;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="Registration")
+public class Registration {
+	
+	@Id
+	@Column
+	@GeneratedValue
+	private String name;
+	@Column
+	private String email;
+	@Column
+	private String phNo;
+	@Column
+	private int type;
+	@Column
+	private String pwd;
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getPhNo() {
+		return phNo;
+	}
+	public void setPhNo(String phNo) {
+		this.phNo = phNo;
+	}
+	public int getType() {
+		return type;
+	}
+	public void setType(int type) {
+		this.type = type;
+	}
+	public String getPwd() {
+		return pwd;
+	}
+	public void setPwd(String pwd) {
+		this.pwd = pwd;
+	}
+	
+	
+
+}

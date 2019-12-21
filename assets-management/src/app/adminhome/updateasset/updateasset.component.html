@@ -1,0 +1,57 @@
+
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="margin-top: -70%;">
+        Launch demo modal
+      </button>
+      
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+
+<form action="" class="col-md-10 offset-1 mt-5 card card-body" style="margin-top: -10%;" #form="ngForm" (ngSubmit)="updateAssetData(form)">
+    <h1 class="text-center bg-dark text-white">Update Asset Data</h1>
+    <div class="form-group">
+        <input type="number" name="assetid" id="assetid" class="form-control" placeholder="Enter Asset Id...." #assetid="ngModel" ngModel required>
+        <div *ngIf="assetid.touched && assetid.invalid">
+        <p class="alert alert-danger" *ngIf="assetid.errors.required">*This Field is required</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <input type="text" name="assetname" id="assetname" class="form-control" placeholder="Enter Asset Name...." #assetname="ngModel" ngModel required>
+        <div *ngIf="assetname.touched && assetname.invalid">
+        <p class="alert alert-danger" *ngIf="assetname.errors.required">*This Field is required</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" name="assetdescription" placeholder="Enter Asset Description..." #assetdescription="ngModel" ngModel required ></textarea>
+        <div *ngIf="assetdescription.touched && assetdescription.invalid">
+            <p class="alert alert-danger" *ngIf="assetdescription.errors.required">*This Field is required</p>
+        </div>   
+    </div>
+    <div class="form-group">
+        <input type="number" name="assetquantity" id="assetquantity" class="form-control" placeholder="Enter Asset Quantity...." #assetquantity="ngModel" ngModel required>
+        <div *ngIf="assetquantity.touched && assetquantity.invalid">
+        <p class="alert alert-danger" *ngIf="assetquantity.errors.required">*This Field is required</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <input type="text" name="assetstatus" id="assetstatus" class="form-control" placeholder="Enter Asset Status...." #assetstatus="ngModel" ngModel required>
+        <div *ngIf="assetstatus.touched && assetstatus.invalid">
+        <p class="alert alert-danger" *ngIf="assetstatus.errors.required">*This Field is required</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-outline-success float-right" [disabled]="form.invalid" >Update Asset</button>
+    </div>
+</form>
+</div>
+</div>
+</div>
+</div>

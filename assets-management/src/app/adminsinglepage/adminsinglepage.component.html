@@ -1,0 +1,33 @@
+
+<html>
+<body>
+<div class="wrap">
+<nav>
+   <div class="logo" ><h2>ADMINPAGE</h2></div>
+   <ul>
+           
+       
+      <li style="margin-left:-12%;margin-top: -3%;"><a href="#">Home</a></li>
+      <li style="margin-top: -3%;"><a routerLink="/addemployee">AddEmployee</a></li>
+      <li style="margin-top: -3%;"><a routerLink="/addasset">AddAsset</a></li><br>
+      <li  style="margin-top: -3%;"><a  routerLink="/updateasset">UpdateAsset</a></li>
+     <li   style="margin-top: -3%;"><a routerLink="/allocateasset">AllocateAsset</a></li><br>
+     <li style="margin-top: -2%;margin-left: -2%;">
+            <div class="btn-group">
+                    <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      VIEW LISTS
+                    </button>
+                    <div class="dropdown-menu">
+                            <a class="nav-link text-dark" routerLink="/viewasset">ViewAsset</a>    
+                    </div>
+            </div>
+     </li>
+      <li  style="margin-left:17%;margin-top: -2%;"><button type="button" class="btn btn-success" (click)='logout()'>Logout</button></li>
+   </ul>
+
+</nav>
+<section></section>
+</div>
+</body>
+</html>
+

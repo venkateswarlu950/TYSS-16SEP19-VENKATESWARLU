@@ -1,0 +1,157 @@
+package com.tyss.librarymanagement.dao;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.EntityTransaction;
+import javax.persistence.PersistenceUnit;
+import javax.persistence.Query;
+import javax.persistence.TypedQuery;
+
+import org.springframework.stereotype.Repository;
+
+import com.tyss.librarymanagement.dto.AddBook;
+import com.tyss.librarymanagement.dto.Registration;
+
+@Repository
+public class LibraryDAOImpl implements LibraryDAO {
+	
+	@PersistenceUnit
+	private EntityManagerFactory factory;
+
+	@Override
+	public boolean userSave(Registration registration) {
+		
+		EntityManager manager = factory.createEntityManager();
+		EntityTransaction transaction = manager.getTransaction();
+		
+		try {
+			transaction.begin();
+			manager.persist(registration);
+			transaction.commit();
+			return true;
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			return false;
+		}
+	}
+
+	@Override
+	public Registration login(String name, String pwd) {
+		System.out.println("name in dao::"+name);
+		System.out.println("pass in dao::"+pwd);
+		
+		EntityManager manager = factory.createEntityManager();
+		String selectQry = "from Registration where name=: name and pwd =: pwd";
+		
+		Query query = manager.createQuery(selectQry);
+		query.setParameter("name", name);
+		query.setParameter("pwd", pwd);
+		Registration reg = null;
+		
+		try {
+			System.out.println("query::"+query.getSingleResult());
+			reg = (Registration) query.getSingleResult();
+			System.out.println("my registration::"+reg);
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+		manager.close();
+		return reg;
+	}
+
+	@Override
+	public boolean bookSave(AddBook book) {
+        
+		EntityManager manager = factory.createEntityManager();
+		EntityTransaction transaction = manager.getTransaction();
+		
+		try {
+			transaction.begin();
+			manager.persist(book);
+			transaction.commit();
+			return true;
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			return false;
+		}
+		
+	}
+
+	@Override
+	public boolean delBook(int id) {
+		
+		EntityManager manager = factory.createEntityManager();
+		EntityTransaction transaction = manager.getTransaction();
+		transaction.begin();
+		AddBook book = manager.find(AddBook.class, id);
+		
+		try {
+			if(book!=null) 
+				manager.remove(book);
+				transaction.commit();
+				return true;
+			
+			}
+			catch (Exception e) {
+			e.printStackTrace();
+			return false;
+			}
+		}
+
+	@Override
+	public List<AddBook> bookList() {
+		String sql =" from AddBook ";
+		EntityManager manager = factory.createEntityManager();
+		
+		TypedQuery<AddBook> query = manager.createQuery(sql, AddBook.class);
+		List<AddBook> bookBean = query.getResultList();
+		
+		
+		return bookBean;
+	}
+
+	@Override
+	public boolean update(AddBook bean) {
+		EntityManager manager = factory.createEntityManager();
+		EntityTransaction transaction = manager.getTransaction();
+		transaction.begin();
+		AddBook book = manager.find(AddBook.class, bean.getbId());
+		book.setbName(bean.getbName());
+		book.setAuthor(bean.getAuthor());
+		book.setISDN(bean.getISDN());
+		book.setPrice(bean.getPrice());
+		book.setDOE(bean.getDOE());
+		
+		
+		return true;
+	}
+
+	@Override
+	public boolean bookRequest(int sno, List<AddBook> books) {
+		
+		Registration reg = new Registration();
+		reg.setSno(sno);
+		reg.setBookList(books);
+		
+		EntityManager manager = factory.createEntityManager();
+		EntityTransaction transaction = manager.getTransaction();
+		transaction.begin();
+		try {
+		manager.persist(reg);
+		return true;
+		}
+		catch (Exception e) {
+             e.printStackTrace();
+             return false;
+		}
+		
+	}
+	
+
+}
+

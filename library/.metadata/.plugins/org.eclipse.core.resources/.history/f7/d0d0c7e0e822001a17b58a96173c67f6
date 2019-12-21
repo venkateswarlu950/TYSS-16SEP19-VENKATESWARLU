@@ -1,0 +1,16 @@
+package com.ustglobal.bootwithdatajpa.controller;
+
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.ustglobal.bootwithdatajpa.dto.Product;
+
+@RestController
+public class ProductController {
+	
+	public boolean productSave(@RequestBody Product product) {
+		
+		return true;
+	}
+
+}

@@ -1,0 +1,61 @@
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="margin-top: -70%;">
+        Launch demo modal
+      </button>
+      
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+
+
+
+
+<form action="" class="col-md-10 offset-1 mt-5 card card-body" #form="ngForm" (ngSubmit)="assetAllocationData(form)">
+    <h1 class="text-center bg-dark text-white"> Asset Allocation Data</h1>
+    <div class="form-group">
+        <input type="number" name="allocationid" id="allocationid" class="form-control" placeholder="Enter Allocation Id...." #allocationid="ngModel" ngModel required>
+        <div *ngIf="allocationid.touched && allocationid.invalid">
+        <p class="alert alert-danger" *ngIf="allocationid.errors.required">*This Field is required</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <input type="number" name="assetid" id="assetid" class="form-control" placeholder="Enter Asset Id...." #assetid="ngModel" ngModel required>
+        <div *ngIf="assetid.touched && assetid.invalid">
+        <p class="alert alert-danger" *ngIf="assetid.errors.required">*This Field is required</p>
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <input type="number" name="empno" id="empno" class="form-control" placeholder="Enter Employee Number...." #empno="ngModel" ngModel required>
+        <div *ngIf="empno.touched && empno.invalid">
+        <p class="alert alert-danger" *ngIf="empno.errors.required">*This Field is required</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <input type="date" name="allocationdate" id="allocationdate" class="form-control" placeholder="Enter Allocation Date...." #allocationdate="ngModel" ngModel required>
+        <div *ngIf="allocationdate.touched && allocationdate.invalid">
+        <p class="alert alert-danger" *ngIf="allocationdate.errors.required">*This Field is required</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <input type="date" name="releasedate" id="releasedate" class="form-control" placeholder="Enter Release Date...." #releasedate="ngModel" ngModel required>
+        <div *ngIf="releasedate.touched && releasedate.invalid">
+        <p class="alert alert-danger" *ngIf="releasedate.errors.required">*This Field is required</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-outline-success float-right" [disabled]="form.invalid" >Submit</button>
+    </div>
+</form>
+
+</div>
+</div>
+</div>
+</div>

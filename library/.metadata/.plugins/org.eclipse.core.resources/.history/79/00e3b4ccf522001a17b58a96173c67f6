@@ -1,0 +1,23 @@
+package com.tyss.stm.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.kafka.KafkaProperties.Producer;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.tyss.smt.service.ProductService;
+
+@RestController
+public class ProductController {
+	
+	@Autowired
+	private ProductService service;
+	
+	public boolean saveProduct(@RequestBody Producer product) {
+		
+		return service.addProduct(product);
+		
+		
+	}
+
+}

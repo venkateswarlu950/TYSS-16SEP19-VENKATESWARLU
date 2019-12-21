@@ -1,0 +1,108 @@
+
+   <nav class="navbar navbar-expand-lg navbar-light adminpage">
+    
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto ">
+        
+        <li class="nav-item">
+          <a class="nav-link text-white" href="#"><h2>AdminPage</h2></a>
+        </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" routerLink="/addasset">AddAsset</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" routerLink="/updateasset">UpdateAsset</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" routerLink="/addemployee">AddEmployee</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" routerLink="/allocateasset">AllocateAsset</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" routerLink="/viewallocatedasset">ViewAllocatedAsset</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" routerLink="/viewunallocatedasset">ViewUnAllocatedAsset</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" routerLink="/viewmanagerrequest">View Manager Requests</a>
+          </li>
+
+
+          
+          <li class="nav-item">
+            <a class="nav-link text-white" href="logout" style="float: right;">Logout</a>
+          </li>
+    
+          </ul>
+        </div>
+        </nav> 
+
+ 
+
+ <!-- <div class="nav flex-column nav-pills adminpage" role="tablist" id="v-pills-tab" aria-orientation="vertical">
+    <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill"  routerLink="/addasset" role="tab" aria-controls="v-pills-home" aria-selected="true">Home</a>
+    <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill"  routerLink="updateasset" role="tab" aria-controls="v-pills-profile" aria-selected="false">Profile</a>
+    <a class="nav-link" id="v-pills-messages-tab"  data-toggle="pill" routerLink="/addemployee" role="tab" aria-controls="v-pills-messages" aria-selected="false">Messages</a>
+    <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" routerLink="/allocateasset" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</a>
+    <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill"  routerLink="/viewallocatedasset" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</a>
+
+    <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" routerLink="/viewunallocatedasset" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</a>
+    <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" routerLink="/viewmanagerrequest" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</a>
+    <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="logout" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</a>
+
+
+</div>
+<div>
+
+</div> -->
+<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Large modal</button>
+
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+        <form action="" class="col-md-8 offset-2 mt-5 card card-body addasset" #form="ngForm" (ngSubmit)="addAssetData(form)">
+          <h1 class="text-center bg-dark text-white">Add Asset Form</h1>
+          <div class="form-group">
+              <input type="number" name="assetid" id="assetid" class="form-control" placeholder="Enter Asset Id...." #assetid="ngModel" ngModel required>
+              <div *ngIf="assetid.touched && assetid.invalid">
+              <p class="alert alert-danger" *ngIf="assetid.errors.required">*This Field is required</p>
+              </div>
+          </div>
+          <div class="form-group">
+              <input type="text" name="assetname" id="assetname" class="form-control" placeholder="Enter Asset Name...." #assetname="ngModel" ngModel required>
+              <div *ngIf="assetname.touched && assetname.invalid">
+              <p class="alert alert-danger" *ngIf="assetname.errors.required">*This Field is required</p>
+              </div>
+          </div>
+          <div class="form-group">
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" name="assetdescription" placeholder="Enter Asset Description..." #assetdescription="ngModel" ngModel required ></textarea>
+              <div *ngIf="assetdescription.touched && assetdescription.invalid">
+                  <p class="alert alert-danger" *ngIf="assetdescription.errors.required">*This Field is required</p>
+              </div>   
+          </div>
+          <div class="form-group">
+              <input type="number" name="assetquantity" id="assetquantity" class="form-control" placeholder="Enter Asset Quantity...." #assetquantity="ngModel" ngModel required>
+              <div *ngIf="assetquantity.touched && assetquantity.invalid">
+              <p class="alert alert-danger" *ngIf="assetquantity.errors.required">*This Field is required</p>
+              </div>
+          </div>
+          <div class="form-group">
+              <input type="text" name="assetstatus" id="assetstatus" class="form-control" placeholder="Enter Asset Status...." #assetstatus="ngModel" ngModel required>
+              <div *ngIf="assetstatus.touched && assetstatus.invalid">
+              <p class="alert alert-danger" *ngIf="assetstatus.errors.required">*This Field is required</p>
+              </div>
+          </div>
+          <div class="form-group">
+              <button type="submit" class="btn btn-outline-primary float-right" [disabled]="form.invalid" >Add Asset</button>
+          </div>
+      </form>
+      
+    </div>
+  </div>
+</div> -->

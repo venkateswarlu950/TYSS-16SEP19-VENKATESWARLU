@@ -1,0 +1,30 @@
+package com.tyss.hibernatewithjpa.manytomany;
+
+import java.util.List;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.Table;
+
+import lombok.Data;
+
+@Data
+@Entity
+@Table(name="students")
+public class Students {
+	
+	@Id
+	@Column
+	private int sId;
+	
+	@Column
+	private String sname;
+	
+	@ManyToMany(cascade = CascadeType.ALL)
+	private List<Courses> courses;
+	
+
+}

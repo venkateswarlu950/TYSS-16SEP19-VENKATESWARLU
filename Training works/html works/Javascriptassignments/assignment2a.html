@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    function factorial(num)
+    {
+        var fact=1;
+        for( var i=1;i<=num;i++)
+        {
+            fact=fact*i;
+        }
+        console.log("factorial of "+num+"is :"+fact);
+    }
+    factorial(4);
+    console.log("==================================");
+
+    var factorial=function(num)
+    {
+        var fact=1;
+        for( var i=1;i<=num;i++)
+        {
+            fact=fact*i;
+        }
+        console.log("factorial of "+num+"is :"+fact);
+    }
+    factorial(5);
+
+    console.log("==================================");
+    (function factorial(num)
+    {
+        var fact=1;
+        for( var i=1;i<=num;i++)
+        {
+            fact=fact*i;
+        }
+        console.log("factorial of "+num+"is :"+fact);
+    })(6);
+    console.log("==================================");
+    var factorial=(num)=>{
+        var fact=1;
+        for( var i=1;i<=num;i++)
+        {
+            fact=fact*i;
+        }
+        console.log("factorial of "+num+"is :"+fact);
+    }
+    factorial(3);
+
+
+
+
+
+    </script>
+</body>
+</html>

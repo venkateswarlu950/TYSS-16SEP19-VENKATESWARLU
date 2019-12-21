@@ -1,0 +1,36 @@
+<form action=""  class="col-md-4 offset-4 mt-5 card card-body"  (ngSubmit)="getDetails()">
+    <h1 class="text-center bg-dark text-white">BooksData</h1>
+    <div class="form-group">
+            <button type="submit" class="btn-outline-success float-right" [disabled]="form.invalid">BookRequestList</button>
+        </div>
+</form >
+<div class="form-group card card-body col-md-4 offset-4 mt-3">
+    <input type="search" name="search" id="search" class="form-control" placeholder="Search by name" [(ngModel)]='search'>
+  </div>
+<table class="table table-border table-striped table-dark col-md-8 offset-2">
+    <thead>
+        <tr>
+            <th>User Id</th>
+            <th>Book Id</th>
+            <th>Book Name</th>
+            <th>Status</th>
+            <th>Operation</th>
+            
+            
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor='let User of details | filter2: search'>
+            <td>{{User.userId}}</td>
+            <td>{{User.bookId}}</td>
+            <td>{{User.bookName}}</td>
+            <td>{{User.status}}</td>
+            <td>
+                <button (click)= "approved(User)"  type="button" class="btn btn-outline-success">Approve</button>
+                <button (click)= "rejected(User)"  type="button" class="btn btn-outline-danger">Reject</button>
+            </td>
+            
+           
+        </tr>
+    </tbody>
+</table>

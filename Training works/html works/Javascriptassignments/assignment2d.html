@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    function prime(num)
+    {
+        var count=0;
+        for(var i=1;i<=num;i++)
+        {
+            if(num%i==0)
+            {
+                count++;
+            }
+
+        }
+        if(count==2)
+        {
+            console.log("the given number",num, "is prime");
+        }
+        else{
+            console.log("the given number",num, "is not prime")
+
+        }
+    }
+    prime(7);
+    console.log("==================================");
+    var prime = function(num)
+    {
+        var count=0;
+        for(var i=1;i<=num;i++)
+        {
+            if(num%i==0)
+            {
+                count++;
+            }
+
+        }
+        if(count==2)
+        {
+            console.log("the given number",num, "is prime");
+        }
+        else{
+            console.log("the given number",num, "is not prime")
+
+        }
+
+    }
+    prime(10);
+    console.log("==================================");
+
+    (function (num){
+        var count=0;
+        for(var i=1;i<=num;i++)
+        {
+            if(num%i==0)
+            {
+                count++;
+            }
+
+        }
+        if(count==2)
+        {
+            console.log("the given number",num, "is prime");
+        }
+        else{
+            console.log("the given number",num, "is not prime")
+
+        }
+
+    })(17);
+    console.log("==================================");
+
+
+    var prime = (num)=>{
+        var count=0;
+        for(var i=1;i<=num;i++)
+        {
+            if(num%i==0)
+            {
+                count++;
+            }
+
+        }
+        if(count==2)
+        {
+            console.log("the given number",num, "is prime");
+        }
+        else{
+            console.log("the given number",num, "is not prime")
+
+        }
+
+    }
+    prime(20);
+
+    </script>
+</body>
+</html>

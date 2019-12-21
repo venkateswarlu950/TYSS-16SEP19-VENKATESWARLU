@@ -1,0 +1,36 @@
+package com.tyss.librarymanagement.dto;
+
+public class Responce {
+	
+	private String status;
+	private String msg;
+	private String des;
+	private Registration registration;
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
+	public String getMsg() {
+		return msg;
+	}
+	public void setMsg(String msg) {
+		this.msg = msg;
+	}
+	public String getDes() {
+		return des;
+	}
+	public void setDes(String des) {
+		this.des = des;
+	}
+	public Registration getRegistration() {
+		return registration;
+	}
+	public void setRegistration(Registration registration) {
+		this.registration = registration;
+	}
+	
+	
+
+}

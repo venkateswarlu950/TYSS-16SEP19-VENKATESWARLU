@@ -1,0 +1,5 @@
+package com.ust.hibernatewithjpa;
+
+public class ReattachingDemo {
+
+}

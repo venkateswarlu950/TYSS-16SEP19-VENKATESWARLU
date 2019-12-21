@@ -1,0 +1,17 @@
+package com.tyss.smt.service;
+
+import java.util.List;
+
+import com.tyss.stm.dto.Order_Info;
+import com.tyss.stm.dto.Product;
+
+public interface ProductService {
+	public boolean addProduct(Product product);
+	public boolean updateProduct(Product product);
+	public boolean deleteProductById(int id);
+	public Product getProductById(int id);
+	public Product getProductByName(String name);
+	public List<Product> getProductByCatagory(String catagory);
+	public List<Product> getAllProduct();
+	public boolean addOredr(Order_Info order);
+}

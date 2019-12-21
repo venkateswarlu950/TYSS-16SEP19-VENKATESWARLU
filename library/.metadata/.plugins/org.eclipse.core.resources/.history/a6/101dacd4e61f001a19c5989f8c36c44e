@@ -1,0 +1,20 @@
+package com.tyss.librarymanagement.service;
+
+import java.util.List;
+
+import com.tyss.librarymanagement.dto.AddBook;
+import com.tyss.librarymanagement.dto.Registration;
+
+
+public interface LibraryService {
+	
+	
+	public boolean userSave(Registration reg);
+	public Registration loginUser(String name, String pwd);
+	public boolean bookSave(AddBook book);
+	public boolean deleteBook(int id);
+	public List<AddBook> bookList();
+	public boolean update(AddBook book);
+	public boolean request(int sno, List<AddBook> list);
+
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+<script src="jsassign1.js"></script>
+</head>
+<body>
+    <p id="demo"></p>    
+</body>
+<script>
+console.log('=============================');
+var a=10;
+var str='10';
+if(a==str){
+    console.log('equal');
+
+}else{
+    console.log('not equal');
+}
+if(a===str){
+    console.log('equal');
+
+}else{
+    console.log('no equal');
+}
+console.log('=============================');
+var strValue=10;
+console.log(typeof strValue);
+var str='venkat';
+console.log(typeof str);
+var name=null;
+console.log(typeof name);
+var boolen=true;
+console.log(typeof boolen);
+
+document.getElementById("demo").innerHTML = Math.floor(Math.random() * 101);
+var val= Math.floor(Math.random() * 101);
+console.log(val);
+
+show('i am very fine');
+
+function show(msg){
+    console.log(msg);
+}
+shine('your balance getting low');
+
+var shine = (function(sms){
+ console.log(sms);
+});
+
+speed('your speed is incresed');
+
+var speed = (increse)=> {
+
+    console.log(increse);
+}
+
+
+console.log('=============================');
+
+</script>
+</html>

@@ -1,0 +1,139 @@
+package com.tyss.librarymanagement.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.tyss.librarymanagement.dto.AddBook;
+import com.tyss.librarymanagement.dto.BookRequest;
+import com.tyss.librarymanagement.dto.Registration;
+import com.tyss.librarymanagement.service.LibraryService;
+
+@CrossOrigin(origins = "*", allowedHeaders = "*" , allowCredentials = "true")
+@RestController
+public class LibraryActionController {
+	
+	@Autowired
+	private LibraryService service;
+	
+	@PostMapping(path = "/reg" ,
+			consumes = MediaType.APPLICATION_JSON_VALUE,
+			produces = MediaType.APPLICATION_JSON_VALUE)
+	public boolean regSave(@RequestBody Registration registration) {
+		
+		return service.userSave(registration);
+	}
+	
+	@PostMapping(path ="/login", 
+			consumes = MediaType.APPLICATION_JSON_VALUE,
+			produces = MediaType.APPLICATION_JSON_VALUE)
+	public Registration loginUser(@RequestBody Registration reg) {
+		String name = reg.getName();
+		String pwd  = reg.getPwd();
+		
+		try {
+			Registration r = service.loginUser(name , pwd);
+			System.out.println("my type::"+r.getType());
+			return r;
+			
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+		
+	}
+	
+	@PostMapping(path="/addBook",consumes = MediaType.APPLICATION_JSON_VALUE,
+			produces = MediaType.APPLICATION_JSON_VALUE)
+	public boolean addBook(@RequestBody AddBook book) {
+		System.out.println("name::"+book.getbName());
+		System.out.println("author::"+book.getAuthor());
+		System.out.println("isdn::"+book.getIsdn());
+		System.out.println("price::"+book.getPrice());
+		System.out.println("date::"+book.getDoe());
+		
+		return service.bookSave(book);
+	}
+	
+	@DeleteMapping(path = "/delete/{bid}",
+			produces = MediaType.APPLICATION_JSON_VALUE)
+	public boolean deleteBook(@PathVariable("bid") int bid) {
+		System.out.println("in action delete id ::"+bid);
+		
+		return service.deleteBook(bid);
+	}
+	
+	@GetMapping(path ="/getList",produces = MediaType.APPLICATION_JSON_VALUE)
+	public List<AddBook> bookList() {
+		List<AddBook> bList = service.bookList();
+	
+		System.out.println("details in action::"+bList);
+		return bList;
+		
+	}
+	
+	@PutMapping(path = "/update", 
+			consumes = MediaType.APPLICATION_JSON_VALUE,
+			produces = MediaType.APPLICATION_JSON_VALUE)
+	public boolean update(@RequestBody AddBook book) {
+		System.out.println("id::"+book.getBid());
+		System.out.println("id::"+book.getbName());
+		System.out.println("id::"+book.getAuthor());
+		System.out.println("id::"+book.getIsdn());
+		System.out.println("id::"+book.getPrice());
+		System.out.println("id::"+book.getDoe());
+		
+		return service.update(book);
+	}
+     
+	@PutMapping(path = "/req", 
+			consumes = MediaType.APPLICATION_JSON_VALUE,
+			produces = MediaType.APPLICATION_JSON_VALUE)
+	public boolean request(@RequestParam("sno") int sno , @RequestParam("list") List<AddBook> list) {
+		
+		return service.request(sno, list);
+	}
+	
+	@PostMapping(path ="/request",
+			consumes = MediaType.APPLICATION_JSON_VALUE,
+			produces = MediaType.APPLICATION_JSON_VALUE)
+	public boolean bookrequest(@RequestBody BookRequest request) {
+		
+		
+		return service.bookRequest(request);
+		
+	}
+	
+	@GetMapping(path="/reqList",
+			produces = MediaType.APPLICATION_JSON_VALUE)
+	public List<BookRequest> bookRqList() {
+		
+		return service.reqList();
+	}
+	
+	@PostMapping(path="/approve", consumes = MediaType.APPLICATION_JSON_VALUE,
+			produces = MediaType.APPLICATION_JSON_VALUE)
+	public boolean approved(@RequestBody BookRequest req) {
+		
+		
+		return service.approve(req);
+	}
+	
+	@DeleteMapping(path="/reject/{id}",
+			produces = MediaType.APPLICATION_JSON_VALUE)
+	public boolean rejected(@PathVariable("id") int id) {
+		
+		return service.reject(id);
+	}
+}

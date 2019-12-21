@@ -1,0 +1,26 @@
+package com.tyss.librarymanagement.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.tyss.librarymanagement.dto.Registration;
+import com.tyss.librarymanagement.service.LibraryService;
+
+@RestController
+public class LibraryActionController {
+	
+	@Autowired
+	private LibraryService service;
+	
+	@PostMapping("/regSave" ,
+			consumes = MediaType.APPLICATION_JSON_VALUE,
+			produces = MediaType.APPLICATION_JSON_VALUE)
+	public boolean regSave(@RequestBody Registration registration) {
+		
+		
+		return service.userSave(registration);
+	}
+
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>DOM FUNCTIONS</h1>
+    <button onclick="myfunctioin()">click here</button>
+    <p onmouseout="remove()" onmouseover="showMe()" id="p">hover on me!!!</p>
+    user name : <input type="text" onkeyup="text()" id="user">
+    <p id="name"></p>
+</body>
+<script>
+console.log('window object::',window);
+console.log('This key word::',this);
+console.log(window === this);
+// alert('hi venkat');
+// alert(window === this);
+// confirm('are sure to delete');
+// let age = prompt("what is yout age", '');
+// console.log(age);
+
+var person = {
+    firstName : 'alia',
+    age : 25,
+    lastName : 'bat',
+    getName : function(){
+        console.log('this key word::',this);
+        return this.firstName+ ' ' +this.lastName
+    }
+    
+}
+let fullName = person.getName()
+console.log(fullName);  
+
+function myfunctioin(){
+
+    alert('click here to msg');
+
+}
+function showMe(){
+    let p = document.getElementById('p');
+    p.style.color = 'green';
+
+    //alert('text changed')
+}
+function remove(){
+    let p1 = document.getElementById('p');
+    p1.style.color = 'black';
+}
+function text(){
+    //alert('type something');
+    console.log('print  hello!!');
+let text = document.getElementById('user').value
+document.getElementById('name').innerHTML = text;
+}
+let name = 'venkat'
+let age = 25
+let phno = 22586 
+
+</script>
+</html>

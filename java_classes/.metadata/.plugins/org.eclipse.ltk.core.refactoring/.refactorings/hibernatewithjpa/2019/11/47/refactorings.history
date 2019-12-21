@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring clone="true" comment="Infer generic type arguments on &apos;hibernatewithjpa&apos;&#x0D;&#x0A;- Original project: &apos;hibernatewithjpa&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     com.tyss.hibernatewithjpa.jpql.GetResultList.java&#x0D;&#x0A;- Assume clone() returns an instance of the receiver type&#x0D;&#x0A;- Leave unconstrained type arguments raw" description="Infer generic type arguments" element1="/src\/main\/java&lt;com.tyss.hibernatewithjpa.jpql{GetResultList.java" flags="6" id="org.eclipse.jdt.ui.infer.typearguments" leave="true" stamp="1574330312649" version="1.0"/>
+</session>

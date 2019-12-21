@@ -1,0 +1,5 @@
+package com.tyss.hibernatewithjpa.jpql;
+
+public class GetResultList {
+
+}

@@ -1,0 +1,49 @@
+package com.ust.hibernatewithjpa;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.EntityTransaction;
+import javax.persistence.Persistence;
+
+import com.tyss.hibernatewithjpa.onetoone.Person;
+import com.tyss.hibernatewithjpa.onetoone.VoterCard;
+
+public class TestOneToOne {
+	
+	public static void main(String[] args) {
+		
+		VoterCard vc = new VoterCard();
+		vc.setVid(10);
+		vc.setVname("ram");
+		Person p = new Person();
+		p.setPid(01);
+		p.setPname("ram");
+		p.setVcard(vc);
+		
+		EntityManager em = null;
+		EntityTransaction et = null;
+		
+		try {
+			
+			
+			
+			EntityManagerFactory emf = Persistence.createEntityManagerFactory("TestPersistence");
+			em = emf.createEntityManager();
+			et = em.getTransaction();
+			et.begin();
+			VoterCard voter = em.find(VoterCard.class, 10);
+			voter.getPerson().getPid();
+			// em.persist(p);
+			System.out.println("record saved");
+			et.commit();
+			em.close();
+			
+			}
+		catch (Exception e) {
+			e.printStackTrace();
+			et.rollback();
+		}
+		em.close();
+	}
+
+}

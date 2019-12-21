@@ -1,0 +1,8 @@
+127.0.0.1 - - [20/Dec/2019:17:34:43 +0530] "GET / HTTP/1.1" 404 1074
+0:0:0:0:0:0:0:1 - - [20/Dec/2019:17:34:47 +0530] "GET /librarymanagement/WEB-INF/classes/com/tyss/librarymanagement/dao/LibraryDAOImpl.java HTTP/1.1" 404 1047
+0:0:0:0:0:0:0:1 - - [20/Dec/2019:17:35:46 +0530] "GET /searchName?name=Id%20cards HTTP/1.1" 404 1084
+0:0:0:0:0:0:0:1 - - [20/Dec/2019:17:37:26 +0530] "GET /searchName?name=Id%20cards HTTP/1.1" 404 1084
+0:0:0:0:0:0:0:1 - - [20/Dec/2019:17:41:55 +0530] "GET /searchName?name=Id%20cards HTTP/1.1" 404 1084
+0:0:0:0:0:0:0:1 - - [20/Dec/2019:17:56:13 +0530] "GET /searchName?name=Id%20cards HTTP/1.1" 404 1084
+0:0:0:0:0:0:0:1 - - [20/Dec/2019:18:10:51 +0530] "GET /searchName?name=Id%20cards HTTP/1.1" 404 1084
+0:0:0:0:0:0:0:1 - - [20/Dec/2019:18:26:03 +0530] "GET /getProduts HTTP/1.1" 404 1084

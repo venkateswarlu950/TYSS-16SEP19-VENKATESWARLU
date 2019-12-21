@@ -1,0 +1,35 @@
+<form action=""  class="col-md-4 offset-4 mt-5 card card-body"  (ngSubmit)="getDetails()">
+    <h1 class="text-center bg-dark text-white">BooksData</h1>
+    <div class="form-group">
+            <button type="submit" class="btn-outline-success float-right" [disabled]="form.invalid">GetBooksData</button>
+        </div>
+</form >
+<div class="form-group card card-body col-md-4 offset-4 mt-3">
+    <input type="search" name="search" id="search" class="form-control" placeholder="Search by name" [(ngModel)]='search'>
+  </div>
+<table class="table table-border table-striped table-dark col-md-8 offset-2">
+    <thead>
+        <tr>
+            <th>Book Id</th>
+            <th>Book Name</th>
+            <th>Book Author</th>
+            <th>ISDN Number</th>
+            <th>Price</th>
+            <th>Date of Entry</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor='let User of books | filter: search'>
+            <td>{{User.bid}}</td>
+            <td>{{User.bName}}</td>
+            <td>{{User.author}}</td>
+            <td>{{User.isdn}}</td>
+            <td>{{User.price}}</td>
+            <td>{{User.doe}}</td>
+           
+        </tr>
+    </tbody>
+</table>
+
+

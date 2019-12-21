@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    function circumference(r)
+    {
+       var circle = (2*Math.PI*r);
+        console.log("circumference of circle is :"+circle);
+    }
+    circumference(20);
+    console.log("==================================");
+
+    var circumference=function(r)
+    {
+        var circle = (2*Math.PI*r);
+        console.log("circumference of circle is :"+circle);
+    }
+    circumference(10);
+
+    console.log("==================================");
+    (function circumference(r)
+    {
+        var circle = (2*Math.PI*r);
+        console.log("circumference of circle is :"+circle);
+    })(15);
+    console.log("==================================");
+    var circumference=(r)=>{
+        var circle = (2*Math.PI*r);
+        console.log("circumference of circle is :"+circle);
+    }
+    circumference(10);
+
+    
+    </script>
+</body>
+</html>

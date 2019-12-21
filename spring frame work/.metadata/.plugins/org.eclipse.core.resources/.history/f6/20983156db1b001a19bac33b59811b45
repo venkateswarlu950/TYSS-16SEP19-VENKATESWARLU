@@ -1,0 +1,13 @@
+package com.tyss.librarymanagement.dao;
+
+import com.tyss.librarymanagement.dto.Registration;
+
+public class LibraryDAOImpl implements LibraryDAO {
+
+	@Override
+	public boolean userSave(Registration registration) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

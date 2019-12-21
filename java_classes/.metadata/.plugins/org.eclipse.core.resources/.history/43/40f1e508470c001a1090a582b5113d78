@@ -1,0 +1,45 @@
+package com.tyss.hibernatewithjpa.jpql;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.EntityTransaction;
+import javax.persistence.Persistence;
+import javax.persistence.Query;
+
+import com.tyss.hibernatewithjpa.dto.ProductInfo;
+
+public class GetResultList {
+
+
+	public static void main(String[] args) {
+
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("TestPersistence");
+		EntityManager em = emf.createEntityManager();
+		EntityTransaction et = em.getTransaction();
+		et.begin();
+		// String jpql = "from ProductInfo";
+		String sql = "select name from ProductInfo";
+		Query q	=em.createQuery(sql);
+		/*List<ProductInfo> l = q.getResultList();
+        for(ProductInfo p : l) {
+        	System.out.println(p.getId());
+        	System.out.println(p.getName());
+        	System.out.println(p.getQua());*/
+        	
+       // }
+		List<String> ls = q.getResultList();
+		for (List<String> list : ls) {
+			
+		}
+		
+		
+		em.close();
+
+
+
+
+	}
+
+}
